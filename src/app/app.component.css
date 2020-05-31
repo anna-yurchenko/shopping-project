@@ -1,0 +1,9 @@
+.navbar{
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+nav a{
+    margin-right: 100px;
+    text-decoration: none;
+    color: #fff;
+}
