@@ -21,3 +21,10 @@
   width: 150px;
   margin: 10px 175px;
 }
+.warning{
+  width: 20px;
+  height: 10px;
+  position: relative;
+  left: 501px;
+  top: -23px;
+}

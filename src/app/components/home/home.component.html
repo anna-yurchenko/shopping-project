@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div class="items-container">
+    <ng-container *ngFor="let item of items">
+        <app-shop-item [item]="item"></app-shop-item>
+    </ng-container>
+</div>

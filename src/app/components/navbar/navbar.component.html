@@ -1,0 +1,17 @@
+<div>
+    <mat-toolbar color="primary" class="navbar">
+        <div>*Insert logo here*</div>
+        <nav>
+            <a routerLink="/">Home</a>
+            <ng-container *ngIf="loggedIn">
+                <a routerLink="/mycart">My cart</a>
+                <a routerLink="/myprofile">My profile</a>
+                <a (click)="logOut()" class="logout-btn">Log out</a>
+            </ng-container>
+            <ng-container *ngIf="!loggedIn">
+                <a routerLink="/registration">Sign up</a>
+                <a routerLink="/login">Sign in</a>
+            </ng-container>
+        </nav>
+    </mat-toolbar>
+</div>

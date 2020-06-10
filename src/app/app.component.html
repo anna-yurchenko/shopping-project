@@ -1,11 +1,14 @@
 <div>
-  <mat-toolbar color="primary" class="navbar">
+  <!-- <mat-toolbar color="primary" class="navbar">
     <div>*Insert logo here*</div>
     <nav>
       <a routerLink="/">Home</a>
       <a routerLink="/registration">Sign up</a>
       <a routerLink="/login">Sign in</a>
     </nav>
-  </mat-toolbar>
+    <button (click)="logOut()">Log out</button>
+    {{loggedIn}}
+  </mat-toolbar> -->
+  <app-navbar></app-navbar>
   <router-outlet></router-outlet>
 </div>

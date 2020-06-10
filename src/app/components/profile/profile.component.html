@@ -1,0 +1,31 @@
+<div>
+    <p class="my-profile">My profile</p>
+    <div class="user-picture">{{initials}}</div>
+
+    <div class="data-container">
+        <form class="user-profile" [formGroup]="profileGroup">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-radio-button value="Female" class="genderOption" [disabled]="!editEnabled">Female</mat-radio-button>
+                <mat-radio-button value="Male" class="genderOption" [disabled]="!editEnabled">Male</mat-radio-button>
+            </mat-radio-group>
+
+            <mat-form-field class="full-width">
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="firstName" [value]="loggedName" [readonly]="!editEnabled">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Last name</mat-label>
+                <input matInput formControlName="lastName" [value]="loggedLastName" [readonly]="!editEnabled">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" [value]="loggedEmail" [readonly]="!editEnabled">
+            </mat-form-field>
+        </form>
+        
+        <button mat-flat-button color="accent" *ngIf="!editEnabled" (click)="enableEdit()" class="btn">Edit profile</button>
+        <button mat-flat-button color="accent" *ngIf="editEnabled" class="btn" (click)="updateHandler()">Save changes</button>
+    </div>
+</div>

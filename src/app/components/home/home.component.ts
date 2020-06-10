@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../../services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  items: any
+
+  constructor(private dbService: DatabaseService) { }
 
   ngOnInit(): void {
+    this.dbService.shoppingItems.subscribe(res => {
+      this.items = res
+    })
   }
 
 }

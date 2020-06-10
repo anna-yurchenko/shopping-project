@@ -1,14 +1,22 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="loginGroup">
     <p class="register">Log in to your account</p>  
+
       <mat-form-field class="example-full-width">
           <mat-label>Your email</mat-label>
-          <input matInput>
+          <input matInput formControlName="email">
+          <span matBadge="!" matBadgeOverlap="false"
+          matBadgeColor="warn" MatBadgeSize="large"
+          matTooltip="Enter a valid email"
+          matTooltipPosition="after"
+          [hidden]="email.valid || email.pristine">
+            <div class="warning"></div>
+          </span>
         </mat-form-field>
   
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
-          <input matInput>
+          <input matInput formControlName="password">
         </mat-form-field>
   
-        <button mat-flat-button color="accent" class="logInBtn">Sign in</button>
+        <button mat-flat-button color="accent" class="logInBtn" [disabled]="!loginGroup.valid" (click)="loginHandler()">Sign in</button>
     </form>
